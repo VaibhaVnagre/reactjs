@@ -10,7 +10,12 @@ const expenses = [
     car : 'Car',
     carname : 'Harrier' ,
     movie : "movie",
-    moviename : "lagan"
+    moviename : "lagan",
+    date : new Date(2010,6,16),
+    title : 'petrol',
+    ammount : 80,
+    location : 'Dubai'
+
   },
   {
     Dish : 'shevbhaji',
@@ -18,7 +23,12 @@ const expenses = [
     car : 'Car',
     carname : 'mercedies' ,
     movie : "movie",
-    moviename : "jay-ho"
+    moviename : "jay-ho",
+    date : new Date(2019,9,29),
+    title : 'beer',
+    ammount : 100,
+    location : 'goa'
+
   },
   {
     Dish : 'panner-handi',
@@ -26,7 +36,12 @@ const expenses = [
     car : 'Car',
     carname : 'maruti800' ,
     movie : "movie",
-    moviename : 'avenger'
+    moviename : 'avenger',
+    date : new Date(2023,7,25),
+    title : 'the-movie',
+    ammount : 500,
+    location : 'mumbai'
+
   },
   {
     Dish : 'pizza',
@@ -34,7 +49,12 @@ const expenses = [
     car : 'Car',
     carname : 'range-rower' ,
     movie : "movie",
-    moviename : "ram-setu"
+    moviename : "ram-setu",
+    date : new Date(2022,5,10),
+    title : 'Pool',
+    ammount : 1500,
+    location : 'pune'
+
   },
 
   {
@@ -43,8 +63,14 @@ const expenses = [
     car : 'Car',
     carname : 'duster' ,
     movie : "movie",
-    moviename : "gangs of wasepur"
-  }
+    moviename : "gang-of-wasepur",
+    date : new Date(2021,2,28),
+    title : 'the-movie',
+    ammount : 180,
+    location : 'buldana'
+
+  },
+  
 
 ]
 
@@ -56,16 +82,22 @@ const expenses = [
    {expenses.map((val)=>{
 
     return(
-      <>
+     
          <ExpenseItem
           Dish={val.Dish}
           price={val.price}
           car={val.car}
           carname={val.carname}
           movie={val.movie}
-          moviename={val.moviename}></ExpenseItem>
+          moviename={val.moviename}
+          date={val.date}
+            title={val.title}
+            ammount={val.ammount}
+            location={val.location}
+          ></ExpenseItem>
           
-    </>
+          
+   
          )
    })}
         
