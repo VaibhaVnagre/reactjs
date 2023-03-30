@@ -1,16 +1,14 @@
-
+import React from 'react';
 import './App.css';
-import ExpenseItem from './ExpenseItem';
+
+import Expenses from './Components/Expenses/Expenses';
+
 function App() {
 
-const expenses = [
+const expense = [
   {
-    Dish : 'maggie',
-    price : 20,
-    car : 'Car',
-    carname : 'Harrier' ,
-    movie : "movie",
-    moviename : "lagan",
+    Title : 'Toilet Paper',
+    price : 'Rs.20',
     date : new Date(2010,6,16),
     title : 'petrol',
     ammount : 80,
@@ -18,12 +16,8 @@ const expenses = [
 
   },
   {
-    Dish : 'shevbhaji',
-    price : 90,
-    car : 'Car',
-    carname : 'mercedies' ,
-    movie : "movie",
-    moviename : "jay-ho",
+    Title : 'Car Insurance',
+    price : 'Rs.1000',
     date : new Date(2019,9,29),
     title : 'beer',
     ammount : 100,
@@ -31,12 +25,8 @@ const expenses = [
 
   },
   {
-    Dish : 'panner-handi',
-    price : 190,
-    car : 'Car',
-    carname : 'maruti800' ,
-    movie : "movie",
-    moviename : 'avenger',
+    Title : 'New Football',
+    price : 'Rs.190',
     date : new Date(2023,7,25),
     title : 'the-movie',
     ammount : 500,
@@ -44,65 +34,28 @@ const expenses = [
 
   },
   {
-    Dish : 'pizza',
-    price : 100,
-    car : 'Car',
-    carname : 'range-rower' ,
-    movie : "movie",
-    moviename : "ram-setu",
+    Title : 'pizza',
+    price : 'Rs.100',
     date : new Date(2022,5,10),
     title : 'Pool',
     ammount : 1500,
     location : 'pune'
 
-  },
-
-  {
-    Dish : 'curry',
-    price : 200,
-    car : 'Car',
-    carname : 'duster' ,
-    movie : "movie",
-    moviename : "gang-of-wasepur",
-    date : new Date(2021,2,28),
-    title : 'the-movie',
-    ammount : 180,
-    location : 'buldana'
-
-  },
+  }
   
 
 ]
 
- 
-  return (
-
-    <div className="App">
-      
-   {expenses.map((val)=>{
-
-    return(
-     
-         <ExpenseItem
-          Dish={val.Dish}
-          price={val.price}
-          car={val.car}
-          carname={val.carname}
-          movie={val.movie}
-          moviename={val.moviename}
-          date={val.date}
-            title={val.title}
-            ammount={val.ammount}
-            location={val.location}
-          ></ExpenseItem>
-          
-          
-   
-         )
-   })}
-        
-    </div>
-  );
+return React.createElement(
+  'div',{},
+  React.createElement(Expenses, { expense: expense })
+);
+  // return (
+  //   <div>
+  //     <Expenses expense={expense}/>
+  //   </div>
+    
+  // ) 
 }
 
 export default App;
