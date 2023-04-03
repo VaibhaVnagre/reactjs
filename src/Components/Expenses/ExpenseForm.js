@@ -5,12 +5,12 @@ import './ExpenseForm.css'
 function ExpenseForm (){
 
   const [enteredtitle, setEnteredtitle] = useState("");
-  const [enteredAmount, setEnteredAmount]= useState('');
-  const [enteredDate, setEnteredDate]= useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
 
    const ChangeTitleHandeler =(e)=>{
     setEnteredtitle(e.target.value);
-    console.log(enteredtitle)
+    
    };
 
    const ChangeAmmountHandeler=(e)=>{
@@ -21,11 +21,21 @@ function ExpenseForm (){
     setEnteredDate(e.target.value);
     
    }
+
+   const submitHandeler =(e)=>{
+      e.preventDefault();
+      let obj = {
+         title:enteredtitle,
+         price:enteredAmount,
+         date :enteredDate
+      }
+      console.log(obj);
+   };
    
     
     return(
 
- <form className="new-expense__controls">
+ <form className="new-expense__controls" onSubmit={submitHandeler}>
 
   <div className="new-expense__control label">
         <label>Title</label>
