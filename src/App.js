@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import Expenses from './Components/Expenses/Expenses';
+import NewExpense from './Components/Expenses/NewExpense';
 
 function App() {
 
@@ -42,20 +43,24 @@ const expense = [
     location : 'pune'
 
   }
-  
-
 ]
 
-return React.createElement(
-  'div',{},
-  React.createElement(Expenses, { expense: expense })
-);
-  // return (
-  //   <div>
-  //     <Expenses expense={expense}/>
-  //   </div>
-    
-  // ) 
+// return React.createElement(
+//   'div',{},
+//   React.createElement(Expenses, { expense: expense })
+// );
+
+const addExpenseHandeler = (expenseData) => {
+  console.log('In App.js')
+  console.log(expenseData)
+   
 }
 
+  return (
+    <div>
+      <NewExpense onAddexpense={addExpenseHandeler}/>
+      <Expenses items={expense}/>
+    </div>
+  ) 
+}
 export default App;
