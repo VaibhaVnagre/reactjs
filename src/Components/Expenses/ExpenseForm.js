@@ -5,16 +5,15 @@ import './ExpenseForm.css'
 function ExpenseForm (props){
 
   const [enteredtitle, setEnteredtitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredAmmount, setEnteredAmmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
 
    const ChangeTitleHandeler =(e)=>{
     setEnteredtitle(e.target.value);
-    
    };
 
    const ChangeAmmountHandeler=(e)=>{
-    setEnteredAmount(e.target.value);
+    setEnteredAmmount(e.target.value);
    };
 
    const ChangeDateHandeler =(e)=>{
@@ -24,13 +23,13 @@ function ExpenseForm (props){
    const submitHandeler =(e)=>{
       e.preventDefault();
       let obj = {
-         title:enteredtitle,
-         price:enteredAmount,
-         date :enteredDate
+         Title:enteredtitle,
+         price:enteredAmmount,
+         date : new Date (enteredDate)
       }
       props.onSaveExpenseData(obj)
       setEnteredtitle("");
-      setEnteredAmount("");
+      setEnteredAmmount("");
       setEnteredDate("");
    };
     return(
@@ -44,15 +43,16 @@ function ExpenseForm (props){
         
   <div className="new-expense__control label">
         <label>Ammount</label>
-        <input type="number" value={enteredAmount} onChange={ChangeAmmountHandeler}/>
+        <input type="number" value={enteredAmmount} onChange={ChangeAmmountHandeler}/>
   </div>  
 
   <div className="new-expense__control label">
         <label>Date</label>
-        <input type="date" min="2019-01-01" max="2020-12-31" value={enteredDate} onChange={ChangeDateHandeler}/>
+        <input type="date" min="2019-01-01" max="2022-12-31" value={enteredDate} onChange={ChangeDateHandeler}/>
   </div> 
 
-  <div className="new-expense__actions"> 
+  <div className="new-expense__actions">
+      <button type="button" onClick={props.onCancle}>Cancle</button> 
       <button type="submit">Add Expense</button>
   </div>
         
